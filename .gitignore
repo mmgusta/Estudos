@@ -51,3 +51,4 @@ RemoteSystemsTempFiles
 .metadata
 *.project
 *.gen
+.recommenders

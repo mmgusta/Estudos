@@ -1,13 +1,28 @@
 package br.com.estudos;
 
-/**
- * Hello world!
- *
- */
+import br.com.estudos.model.AtualizadorDeContas;
+import br.com.estudos.model.Conta;
+import br.com.estudos.model.ContaCorrente;
+import br.com.estudos.model.ContaPoupanca;
+
 public class App 
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World!" );
+        Conta c = new Conta();
+        Conta cc = new ContaCorrente();
+        Conta cp = new ContaPoupanca();
+
+        c.deposita(1000); 
+        cc.deposita(1000); 
+        cp.deposita(1000);
+
+        AtualizadorDeContas adc = new AtualizadorDeContas(0.01);
+
+        adc.roda(c);
+        adc.roda(cc);
+        adc.roda(cp);
+
+        System.out.println("Saldo Total: " + adc.getSaldoTotal());
     }
 }
