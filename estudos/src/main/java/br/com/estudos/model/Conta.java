@@ -1,6 +1,6 @@
 package br.com.estudos.model;
 
-public class Conta {
+public abstract class Conta {
 	
 	protected double saldo;
 	
@@ -16,8 +16,6 @@ public class Conta {
 		return this.saldo -= valor;
 	}
 	
-	public void atualiza(double taxa) {
-		this.saldo *= taxa + 1;
-	}
+	public abstract void atualiza(double taxa);
 
 }
